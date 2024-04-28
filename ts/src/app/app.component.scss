@@ -32,6 +32,7 @@ body {
   height: 68px;
   justify-content: center;
   width: 220px;
+  position: relative;
 }
 
 .nav_title {
@@ -71,6 +72,26 @@ body {
   padding: 0px 0px 0px 24px;
   text-align: left;
   width: 220px;
+}
+
+
+.item--ativo {
+    background-color: $cor-bege2;
+    border-bottom: 2px solid $cor-cinza-clarissimo;
+    border-top: none;
+    border-left: 3px solid $cor-laranja;
+    border-right: none;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    height: 33px;
+    font-family: 'Quicksand', Arial, Helvetica, sans-serif;
+    line-height: 19px;
+    padding: 0px 0px 0px 24px;
+    text-align: left;
+    color: $cor-marrom;
+    width: 220px;
+    
 }
 
 .nav_button:hover {
@@ -142,7 +163,8 @@ header {
   justify-content: space-between;
 }
 
-#languages {
+
+.Languages {
   background: url('img/languageimage.png');
   background-position: left;
   background-repeat: no-repeat;
@@ -162,6 +184,7 @@ option {
 
 .wellcome {
   font-family: 'Quicksand', Arial, Helvetica, sans-serif;
+  opacity: 75%;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -170,6 +193,7 @@ option {
 
 .email_login {
   font-family: 'Quicksand', Arial, Helvetica, sans-serif;
+  opacity: 75%;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -192,16 +216,17 @@ option {
 
 .user_info {
   display: flex;
+  padding-left: 130px;
   flex-direction: row;
   justify-content: space-between;
   text-align: right;
   
 }
 
-#imagem_user {
+#Imagem_user {
   border-radius: 50%;
   height: 30px;
-  width: auto;
+  width: 30px;
   background-image: url(./img/user.png);
 }
 
@@ -486,7 +511,7 @@ main {
   display: none;
 }
 
-#verMais {
+.btn-show-more {
   border-top: none;
   border-left: none;
   border-right: none;
@@ -499,7 +524,7 @@ main {
   color: $cor-laranja2;
 }
 
-#verMais:hover {
+.btn-show-more:hover {
   cursor: pointer;
 }
 
@@ -542,6 +567,7 @@ main {
   border-top: none;
   border-left: none;
   border-right: none;
+  align-items: center;
 }
 .discussions_subtitle {
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
@@ -591,14 +617,20 @@ main {
   color: $cor-cinza2;
 }
 
+
 .btn-create-topic {
-    background-color: $cor-laranja;
-    border: none;
-    height: 30px;
-    width: 120px;
-    display: flexbox;
-    justify-content: center;
-    align-items: center;
+  background-image: linear-gradient(180deg, $cor-amarelo 0%, $cor-laranja 100%);
+  border: none;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 138px;
+  font-family: 'Quicksand', Arial, Helvetica, sans-serif;
+  color: #FFFFFF;
+  border-radius: 10%;
+  font-size: 18px;
 }
 
 
@@ -618,7 +650,7 @@ main {
   text-align: center;
   margin: 15px 0 22px 0;
 }     
-.form_questions {
+.form {
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -681,9 +713,17 @@ main {
   align-items: center;
 }
 .editions_img {
+  background-image: url(./img/strong.png);
   Width: 15.42px;
   Height: 10px;
 }
+
+.editions_img {
+  background-image: url(./img/emphasis.png);
+  Width: 15.42px;
+  Height: 10px;
+}
+
 #submit_button {
   margin-bottom: 45px;
   text-align: center;
@@ -745,6 +785,7 @@ main {
   margin-bottom: 47px;
 }
 #new_topic_button {
+  background-image: url(./img/criar_novo_topico.png);
   border: none;
   text-align: center;
   background-color: $cor-bege; 
@@ -770,6 +811,7 @@ main {
   margin: 0 0 17px 0;
 }
 .img_comments_sent {
+  background-image: url(./img/seta_feedback.png);
   width: 23.92px;
   height: auto;
 }
@@ -791,7 +833,7 @@ main {
   color: $cor-laranja2;
 }
 
-.coments {
+.comments-container {
   background-color: $cor-bege;
   border: 1px solid $cor-cinza-clarissimo;
   box-sizing: border-box;
@@ -802,7 +844,7 @@ main {
   padding: 17px 23.7px 18px 24.7px;
   margin: 0 0 0 0;
 }
-.subject {
+.ops-topic-subject {
   font-family: 'Quicksand', Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -836,10 +878,11 @@ main {
   margin-bottom: 18px;
 }
 .more_info {
+  background-image: url(./img/moreinfo.png);
   border: none;
   width: 4px;
   height: 18px;
-  background: none;
+  
 }
 .more_info:hover{
   cursor: pointer;
@@ -848,10 +891,10 @@ main {
   size: 100%;
 }
 .like {
+  background-image: url(./img/like.png);
   border: none;
   width: 27px;
   height: 19px;
-  background: none;
 }
 .like:hover {
   cursor: pointer;
@@ -870,7 +913,7 @@ main {
 .var_like:hover {
   cursor: pointer;
 }
-.var_answers {
+.answered-topic {
   font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 350;
@@ -878,7 +921,7 @@ main {
   line-height: 19px;
   color: $cor-tom-cinza2;
 }
-.var_answers:hover {
+.answered-topic:hover {
   cursor:pointer
 }
 #var_answers {
@@ -938,7 +981,7 @@ main {
   width: 20px;
   height: auto;
 }
-.interactions_paragraphs {
+.topic-subject {
   font-family: 'Quicksand', Arial, Helvetica, sans-serif;;
   font-style: normal;
   font-weight: 400;
@@ -959,7 +1002,8 @@ main {
 }
 
 .img_footer {
+  background-image: url(./img/footer.png);
   height: 181px;
   margin: 0 46px 0 14px;
-  width: auto;
+  width: 1100px;
 }
